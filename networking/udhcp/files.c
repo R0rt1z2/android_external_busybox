@@ -8,6 +8,7 @@
  */
 #include <netinet/ether.h>
 
+#include "../ether_port.h"
 #include "common.h"
 #include "dhcpd.h"
 
