@@ -225,6 +225,7 @@
 /bin/usleep
 /bin/uudecode
 /bin/uuencode
+/bin/udhcpc
 /bin/vi
 /bin/watch
 /bin/wc
