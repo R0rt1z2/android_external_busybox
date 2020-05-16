@@ -63,20 +63,6 @@
  *   doing so only works with adapters configured for unicast+broadcast Rx
  *   filter.  That configuration consumes more power.
  */
-<<<<<<< HEAD
-=======
-//config:config ETHER_WAKE
-//config:	bool "ether-wake (4.9 kb)"
-//config:	default y
-//config:	select PLATFORM_LINUX
-//config:	help
-//config:	Send a magic packet to wake up sleeping machines.
-
-//applet:IF_ETHER_WAKE(APPLET_ODDNAME(ether-wake, ether_wake, BB_DIR_USR_SBIN, BB_SUID_DROP, ether_wake))
-
-//kbuild:lib-$(CONFIG_ETHER_WAKE) += ether-wake.o
-//kbuild:lib-$(CONFIG_ETHER_WAKE) += ether_aton_r.o ether_ntoa_r.o
->>>>>>> 9e8577760... fix udhcpd and nameif, add ether_ntoa_r and ether_aton_r from glibc
 
 //usage:#define ether_wake_trivial_usage
 //usage:       "[-b] [-i IFACE] [-p aa:bb:cc:dd[:ee:ff]/a.b.c.d] MAC"
@@ -131,7 +117,7 @@ void bb_debug_dump_packet(unsigned char *outpack, int pktsize)
 static void get_dest_addr(const char *hostid, struct ether_addr *eaddr)
 {
 	struct ether_addr *eap;
-	char ether_buf[20];
+    char ether_buf[20];
 
 	eap = ether_aton_r(hostid, eaddr);
 	if (eap) {
